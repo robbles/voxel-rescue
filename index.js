@@ -12,7 +12,7 @@ module.exports = function(game, opts) {
 var DEFAULT_FREQ = 500
 var DEFAULT_DANGER_ZONE = {
   lower: {x: -Infinity, y: -Infinity, z: -Infinity},
-  upper: {x: Infinity, y: -100, z: Infinity}
+  upper: {x: Infinity, y: -200, z: Infinity}
 }
 
 function Rescuer(game, opts) {
@@ -34,7 +34,7 @@ Rescuer.prototype.checkPosition = function() {
      currentPos.x > dangerZone.lower.x &&
      currentPos.y > dangerZone.lower.y &&
      currentPos.z > dangerZone.lower.z) {
-    this.rescue(currentPos)
+    this.rescue(currentPos.clone())
   }
 }
 
