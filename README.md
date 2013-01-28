@@ -2,6 +2,8 @@
 
 Automatically teleport the player back to a known location if they enter a certain region of the world (e.g. fall off the map)
 
+NOTE: this module is based pretty heavily on [maxogden/voxel-highlight](https://github.com/maxogden/voxel-highlight).
+
 ```
 npm install voxel-rescue
 ```
