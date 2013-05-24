@@ -4,8 +4,8 @@ var inherits = require('inherits')
 var events = require('events')
 var _ = require('underscore')
 
-module.exports = function(game, opts) {
-  return new Rescuer(game, opts)
+module.exports = function(game, object, opts) {
+  return new Rescuer(game, object, opts)
 }
 
 // Default option values
