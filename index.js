@@ -29,12 +29,12 @@ Rescuer.prototype.checkPosition = function() {
   var dangerZone = this.opts.dangerZone || DEFAULT_DANGER_ZONE
   var currentPos = this.object.yaw.position
 
-  if(currentPos.x < dangerZone.upper.x &&
-     currentPos.y < dangerZone.upper.y &&
-     currentPos.z < dangerZone.upper.z &&
-     currentPos.x > dangerZone.lower.x &&
-     currentPos.y > dangerZone.lower.y &&
-     currentPos.z > dangerZone.lower.z) {
+  if (currentPos.x < dangerZone.upper.x)
+  if (currentPos.y < dangerZone.upper.y)
+  if (currentPos.z < dangerZone.upper.z)
+  if (currentPos.x > dangerZone.lower.x)
+  if (currentPos.y > dangerZone.lower.y)
+  if (currentPos.z > dangerZone.lower.z) {
     this.rescue(currentPos.clone())
   }
 }
