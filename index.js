@@ -42,7 +42,7 @@ Rescuer.prototype.checkPosition = function() {
 Rescuer.prototype.rescue = function(position) {
   if(this.opts.teleport !== false) {
     // Default to starting position for rescue point
-    this.object.position.copy(this.opts.position || this.game.startingPosition)
+    this.object.yaw.position.copy(this.opts.position || this.game.startingPosition)
   }
   this.emit('rescue', position)
 }
