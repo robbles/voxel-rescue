@@ -15,10 +15,11 @@ var DEFAULT_DANGER_ZONE = {
   upper: {x: Infinity, y: -200, z: Infinity}
 }
 
-function Rescuer(game, opts) {
+function Rescuer(game, object, opts) {
   if (!opts) opts = {}
   this.opts = opts
   this.game = game
+  this.object = object
   this.game.on('tick', _.throttle(this.checkPosition.bind(this), this.opts.frequency || DEFAULT_FREQ))
 }
 
@@ -26,7 +27,7 @@ inherits(Rescuer, events.EventEmitter)
 
 Rescuer.prototype.checkPosition = function() {
   var dangerZone = this.opts.dangerZone || DEFAULT_DANGER_ZONE
-  var currentPos = this.game.controls.yawObject.position
+  var currentPos = this.object.yaw.position
 
   if(currentPos.x < dangerZone.upper.x &&
      currentPos.y < dangerZone.upper.y &&
